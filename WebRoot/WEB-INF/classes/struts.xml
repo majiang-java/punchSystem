@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="test.drools.applycredit" namespace="/" extends="struts-default">
+ 
+        <action name="login" method="login" class="com.web.action.LoginAction">
+            <result name="normal">/jsp/logCard.jsp</result>
+            <result name="login" type="redirectAction">person!getAllList.action</result>
+        </action>
+        
+       
+        
+ 		<action name="person" class="com.web.action.PersonsAction">
+            <result name="list">/jsp/list.jsp</result>
+            <result name="success" type="redirectAction">person!getAllList.action</result>
+            <result name="add">/jsp/addperson.jsp</result>
+            <result name="edit">/jsp/personEdit.jsp</result>
+             <result name="logCard">/jsp/logCard.jsp</result>
+            
+        </action>       
+
+    <action name="statistic" class="com.web.action.StatisticAction">
+            <result name="success">/jsp/statisticList.jsp</result>
+        </action>
+
+
+        <!-- Add actions here -->
+    </package>
+</struts>
